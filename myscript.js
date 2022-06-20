@@ -73,7 +73,6 @@ let game = () => {
                 computerWins++;
                 break;
             case -1 :
-                console.log("Error");
                 break;
         }
     }
