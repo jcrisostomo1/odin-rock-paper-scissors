@@ -18,34 +18,76 @@ let computerPlay = () => {
     return computerSelection;
 }
 
-let playerSelection = prompt("Enter: Rock Paper or Scissors?").toLocaleLowerCase();
 
-let playRound = (playerSelection, computerSelection) => {
+let playRound = (computerSelection) => {
+    let playerSelection = prompt("Enter: Rock Paper or Scissors?").toLocaleLowerCase();
     console.log("Player Chose: " + playerSelection);
     console.log("Computer Chose: " + computerSelection);
     if(playerSelection === computerSelection) {
-        return "It's a Tie!"
+        console.log("It's a Tie!")
+        return 0;
     } else if (playerSelection === "rock") {
         if(computerSelection === "scissors") {
-            return "You Win! Rock beats Scissors."
+            console.log("You Win! Rock beats Scissors.");
+            return 1;
         } else if(computerSelection === "paper") {
-            return "Computer Wins. Paper beats Rock."
+            console.log("Computer Wins. Paper beats Rock.");
+            return 2;
         }
     } else if (playerSelection === "paper") {
         if(computerSelection === "rock") {
-            return "You Win! Paper beats Rock."
+            console.log("You Win! Paper beats Rock.");
+            return 1;
         } else if (computerSelection === "scissors") {
-            return "Computer Wins. Scissors beat Paper."
+            console.log("Computer Wins. Scissors beat Paper.");
+            return 2;
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            return "You win! Scissors beat Paper."
+            console.log("You win! Scissors beat Paper.");
+            return 1;
         } else if (computerSelection === "rock") {
-            return "Computer Wins. Rock beats Scissors."
+            console.log("Computer Wins. Rock beats Scissors.");
+            return 2;
         }
     } else {
-        return "Please enter a valid entry."
+        console.log("Please enter a valid entry.")
+        return -1;
     }
-    
 }
-console.log(playRound(playerSelection, computerPlay()));
+
+let game = () => {
+    let ties = 0;
+    let playerWins = 0;
+    let computerWins = 0;
+    for(let i = 0; i < 5; i++) {
+        let result = playRound(computerPlay());
+        switch (result) {
+            case 0 :
+                ties++;
+                break;
+            case 1 :
+                playerWins++;
+                break;
+            case 2 : 
+                computerWins++;
+                break;
+            case -1 :
+                console.log("Error");
+                break;
+        }
+    }
+    console.log("Ties: " + ties);
+    console.log("Player Wins: " + playerWins);
+    console.log("Computer Wins: " + computerWins);
+    if (playerWins > computerWins) {
+        console.log("YOU WON!");
+    } else if (playerWins < computerWins) {
+        console.log("You lost! :(");
+    } else if (playerWins === computerWins) {
+        console.log("It's a Tie!")
+    }
+
+}
+
+game();
