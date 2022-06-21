@@ -59,22 +59,26 @@ let decideWinner = result => {
     let ties = parseInt(document.querySelector(".score-tie p").textContent);
     let playerWins = parseInt(document.querySelector(".score-player p").textContent);
     let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
-    switch (result) {
-        case 0 :
-            ties++;
-            break;
-        case 1 :
-            playerWins++;
-            break;
-        case 2 : 
-            computerWins++;
-            break;
-        case -1 :
-            break;
+    while (playerWins !== 5 && computerWins !== 5) {
+        switch (result) {
+            case 0 :
+                ties++;
+                break;
+            case 1 :
+                playerWins++;
+                break;
+            case 2 : 
+                computerWins++;
+                break;
+            case -1 :
+                break;
+        }
+        document.querySelector(".score-tie p").textContent = ties;
+        document.querySelector(".score-player p").textContent = playerWins;
+        document.querySelector(".score-computer p").textContent = computerWins;
+        break;
     }
-    document.querySelector(".score-tie p").textContent = ties;
-    document.querySelector(".score-player p").textContent = playerWins;
-    document.querySelector(".score-computer p").textContent = computerWins;
+    
 }
 
 let rockBtn = document.getElementById("rock-btn");
