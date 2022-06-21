@@ -2,4 +2,4 @@
 
 Project to learn the basics of JavaScript from the Odin Project!
 
-Play against the computer in a game of Rock, Paper, Scissors! 
+Play against the computer in a 5 round game of Rock, Paper, Scissors!
