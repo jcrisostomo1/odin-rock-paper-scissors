@@ -4,15 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="myscript.js"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Rock Paper Scissors!</h1>
     <div>
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+        <button id="rock-btn">Rock</button>
+        <button id="paper-btn">Paper</button>
+        <button id="scissors-btn">Scissors</button>
+    </div>
+
+    <div class="score-section">
+        <h2>Scores</h2>
+        <div class="scoreboard">
+            <div class="score-tie">
+                Ties: 
+                <p>0</p>
+            </div>
+            <div class="score-player">
+                Player Wins: 
+                <p>0</p>
+            </div>
+            <div class="score-computer">
+                Computer Wins: 
+                <p>0</p>
+            </div>
+        </div>
+        
+    
     </div>
 </body>
+<script src="myscript.js"></script>
 </html>

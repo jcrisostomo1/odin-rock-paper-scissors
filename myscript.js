@@ -19,8 +19,7 @@ let computerPlay = () => {
 }
 
 
-let playRound = (computerSelection) => {
-    let playerSelection = prompt("Enter: Rock Paper or Scissors?").toLocaleLowerCase();
+let playRound = (playerSelection ,computerSelection) => {
     console.log("Player Chose: " + playerSelection);
     console.log("Computer Chose: " + computerSelection);
     if(playerSelection === computerSelection) {
@@ -55,3 +54,43 @@ let playRound = (computerSelection) => {
         return -1;
     }
 }
+
+let decideWinner = result => {
+    let ties = parseInt(document.querySelector(".score-tie p").textContent);
+    let playerWins = parseInt(document.querySelector(".score-player p").textContent);
+    let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
+    switch (result) {
+        case 0 :
+            ties++;
+            break;
+        case 1 :
+            playerWins++;
+            break;
+        case 2 : 
+            computerWins++;
+            break;
+        case -1 :
+            break;
+    }
+    document.querySelector(".score-tie p").textContent = ties;
+    document.querySelector(".score-player p").textContent = playerWins;
+    document.querySelector(".score-computer p").textContent = computerWins;
+}
+
+let rockBtn = document.getElementById("rock-btn");
+rockBtn.addEventListener('click', () => {
+    let result = playRound("rock", computerPlay());
+    decideWinner(result);
+})
+
+let paperBtn = document.getElementById("paper-btn");
+paperBtn.addEventListener("click", () => {
+    let result = playRound("paper", computerPlay());
+    decideWinner(result);
+})
+
+let scissorsBtn = document.getElementById("scissors-btn");
+scissorsBtn.addEventListener('click', () => {
+    let result = playRound("scissors", computerPlay());
+    decideWinner(result);
+})

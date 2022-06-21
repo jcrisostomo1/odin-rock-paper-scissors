@@ -1,0 +1,26 @@
+.score-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    padding: 2em;
+    margin: 2em;
+}
+
+.score-computer,
+.score-player,
+.score-tie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    margin: 2em;
+}
