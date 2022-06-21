@@ -55,38 +55,3 @@ let playRound = (computerSelection) => {
         return -1;
     }
 }
-
-let game = () => {
-    let ties = 0;
-    let playerWins = 0;
-    let computerWins = 0;
-    for(let i = 0; i < 5; i++) {
-        let result = playRound(computerPlay());
-        switch (result) {
-            case 0 :
-                ties++;
-                break;
-            case 1 :
-                playerWins++;
-                break;
-            case 2 : 
-                computerWins++;
-                break;
-            case -1 :
-                break;
-        }
-    }
-    console.log("Ties: " + ties);
-    console.log("Player Wins: " + playerWins);
-    console.log("Computer Wins: " + computerWins);
-    if (playerWins > computerWins) {
-        console.log("YOU WON!");
-    } else if (playerWins < computerWins) {
-        console.log("You lost! :(");
-    } else if (playerWins === computerWins) {
-        console.log("It's a Tie!")
-    }
-
-}
-
-game();
