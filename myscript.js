@@ -79,9 +79,9 @@ let keepScore = result => {
     document.querySelector(".score-computer p").textContent = computerWins;
     if (playerWins === 5 || computerWins === 5) {
         if (playerWins > computerWins) {
-            winner.textContent = "YOU!";
+            winner.textContent = "YOU WON!";
         } else {
-            winner.textContent = "COMPUTER!"
+            winner.textContent = "COMPUTER WON :("
         }
         
     }
