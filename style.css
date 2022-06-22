@@ -1,26 +1,50 @@
+h1 {
+    text-align: center;
+    padding: 1em;
+    background-color: limegreen
+}
+
+.rps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+    background-color: burlywood;
+}
+
+.rps {
+    appearance: button;
+    border-radius: 6px;    
+}
+
 .score-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: beige;
+    background-color: red;
 }
 
 .scoreboard {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
     padding: 2em;
-    margin: 2em;
+    background-color: aqua;
 }
 
-.score-computer,
-.score-player,
-.score-tie {
+.card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em;
-    margin: 2em;
+    padding: 1em;
+    gap: 8px;
 }
+
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
