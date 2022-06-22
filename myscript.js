@@ -21,6 +21,8 @@ let computerPlay = () => {
 let ties = parseInt(document.querySelector(".score-tie p").textContent);
 let playerWins = parseInt(document.querySelector(".score-player p").textContent);
 let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
+let winner = document.querySelector(".winner p");
+
 
 let playRound = (playerSelection ,computerSelection) => {
     while (playerWins !== 5 && computerWins !== 5) {
@@ -76,11 +78,14 @@ let keepScore = result => {
     document.querySelector(".score-player p").textContent = playerWins;
     document.querySelector(".score-computer p").textContent = computerWins;
     if (playerWins === 5 || computerWins === 5) {
-        console.log("STOPPPP! WE HAVE A WINNER!");
+        if (playerWins > computerWins) {
+            winner.textContent = "YOU!";
+        } else {
+            winner.textContent = "COMPUTER!"
+        }
+        
     }
 }
-
-
 
 let rockBtn = document.getElementById("rock-btn");
 rockBtn.addEventListener('click', () => {
