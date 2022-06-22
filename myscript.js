@@ -18,11 +18,12 @@ let computerPlay = () => {
     return computerSelection;
 }
 
+let ties = parseInt(document.querySelector(".score-tie p").textContent);
+let playerWins = parseInt(document.querySelector(".score-player p").textContent);
+let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
 
 let playRound = (playerSelection ,computerSelection) => {
     while (playerWins !== 5 && computerWins !== 5) {
-        console.log("Player Chose: " + playerSelection);
-        console.log("Computer Chose: " + computerSelection);
         if(playerSelection === computerSelection) {
             console.log("It's a Tie!")
             return 0;
@@ -57,11 +58,6 @@ let playRound = (playerSelection ,computerSelection) => {
     }
 }
 
-let ties = parseInt(document.querySelector(".score-tie p").textContent);
-let playerWins = parseInt(document.querySelector(".score-player p").textContent);
-let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
-let round = playerWins !== 5 && computerWins !== 5;
-
 let keepScore = result => {
     switch (result) {
         case 0 :
@@ -79,6 +75,9 @@ let keepScore = result => {
     document.querySelector(".score-tie p").textContent = ties;
     document.querySelector(".score-player p").textContent = playerWins;
     document.querySelector(".score-computer p").textContent = computerWins;
+    if (playerWins === 5 || computerWins === 5) {
+        console.log("STOPPPP! WE HAVE A WINNER!");
+    }
 }
 
 
