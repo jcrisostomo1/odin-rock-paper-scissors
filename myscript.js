@@ -55,10 +55,12 @@ let playRound = (playerSelection ,computerSelection) => {
     }
 }
 
+let ties = parseInt(document.querySelector(".score-tie p").textContent);
+let playerWins = parseInt(document.querySelector(".score-player p").textContent);
+let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
+let round = playerWins !== 5 && computerWins !== 5;
+
 let decideWinner = result => {
-    let ties = parseInt(document.querySelector(".score-tie p").textContent);
-    let playerWins = parseInt(document.querySelector(".score-player p").textContent);
-    let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
     while (playerWins !== 5 && computerWins !== 5) {
         switch (result) {
             case 0 :
@@ -78,23 +80,25 @@ let decideWinner = result => {
         document.querySelector(".score-computer p").textContent = computerWins;
         break;
     }
-    
 }
+
+
 
 let rockBtn = document.getElementById("rock-btn");
 rockBtn.addEventListener('click', () => {
-    let result = playRound("rock", computerPlay());
+    let result = playRound(rockBtn.textContent.toLocaleLowerCase(), computerPlay());
     decideWinner(result);
+
 })
 
 let paperBtn = document.getElementById("paper-btn");
 paperBtn.addEventListener("click", () => {
-    let result = playRound("paper", computerPlay());
+    let result = playRound(paperBtn.textContent.toLowerCase(), computerPlay());
     decideWinner(result);
 })
 
 let scissorsBtn = document.getElementById("scissors-btn");
 scissorsBtn.addEventListener('click', () => {
-    let result = playRound("scissors", computerPlay());
+    let result = playRound(scissorsBtn.textContent.toLowerCase(), computerPlay());
     decideWinner(result);
 })
