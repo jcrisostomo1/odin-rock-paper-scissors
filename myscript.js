@@ -21,36 +21,37 @@ let computerPlay = () => {
 let ties = parseInt(document.querySelector(".score-tie p").textContent);
 let playerWins = parseInt(document.querySelector(".score-player p").textContent);
 let computerWins = parseInt(document.querySelector(".score-computer p").textContent);
+let log = document.querySelector(".logs p");
 let winner = document.querySelector(".winner p");
 
 
 let playRound = (playerSelection ,computerSelection) => {
     while (playerWins !== 5 && computerWins !== 5) {
         if(playerSelection === computerSelection) {
-            console.log("It's a Tie!")
+            log.textContent = ("It's a Tie!");
             return 0;
         } else if (playerSelection === "rock") {
             if(computerSelection === "scissors") {
-                console.log("You Win! Rock beats Scissors.");
+                log.textContent = ("You Win! Rock beats Scissors.");
                 return 1;
             } else if(computerSelection === "paper") {
-                console.log("Computer Wins. Paper beats Rock.");
+                log.textContent = ("Computer Wins. Paper beats Rock.");
                 return 2;
             }
         } else if (playerSelection === "paper") {
             if(computerSelection === "rock") {
-                console.log("You Win! Paper beats Rock.");
+                log.textContent = ("You Win! Paper beats Rock.");
                 return 1;
             } else if (computerSelection === "scissors") {
-                console.log("Computer Wins. Scissors beat Paper.");
+                log.textContent = ("Computer Wins. Scissors beat Paper.");
                 return 2;
             }
         } else if (playerSelection === "scissors") {
             if (computerSelection === "paper") {
-                console.log("You win! Scissors beat Paper.");
+                log.textContent = ("You win! Scissors beat Paper.");
                 return 1;
             } else if (computerSelection === "rock") {
-                console.log("Computer Wins. Rock beats Scissors.");
+                log.textContent = ("Computer Wins. Rock beats Scissors.");
                 return 2;
             }
         } else {
@@ -78,6 +79,7 @@ let keepScore = result => {
     document.querySelector(".score-player p").textContent = playerWins;
     document.querySelector(".score-computer p").textContent = computerWins;
     if (playerWins === 5 || computerWins === 5) {
+        log.textContent = "GAME OVER";
         if (playerWins > computerWins) {
             winner.textContent = "YOU WON!";
         } else {
@@ -114,4 +116,5 @@ resetBtn.addEventListener('click', () => {
     document.querySelector(".score-player p").textContent = playerWins;
     document.querySelector(".score-computer p").textContent = computerWins;
     winner.textContent = "";
+    log.textContent = "";
 })

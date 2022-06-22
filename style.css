@@ -7,6 +7,7 @@
 body {
     background-color: bisque;
 }
+
 h1 {
     text-align: center;
     padding: 1em;
@@ -27,6 +28,15 @@ h1 {
     border-radius: 6px;
     width: 75px;
     height: auto;
+}
+
+.logs {
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    margin: 0em 30em;
+    border-radius: 18px;
 }
 
 .score-section {
@@ -80,6 +90,8 @@ h1 {
     font-size: 1em;
 }
 
+
+.logs,
 .desc,
 .reset {
     display: flex;
