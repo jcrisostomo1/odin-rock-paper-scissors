@@ -104,3 +104,14 @@ scissorsBtn.addEventListener('click', () => {
     let result = playRound(scissorsBtn.textContent.toLowerCase(), computerPlay());
     keepScore(result);
 });
+
+let resetBtn = document.getElementById("reset-btn");
+resetBtn.addEventListener('click', () => {
+    ties = 0;
+    playerWins = 0;
+    computerWins = 0;
+    document.querySelector(".score-tie p").textContent = ties;
+    document.querySelector(".score-player p").textContent = playerWins;
+    document.querySelector(".score-computer p").textContent = computerWins;
+    winner.textContent = "";
+})
