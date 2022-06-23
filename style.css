@@ -30,13 +30,14 @@ h1 {
     height: auto;
 }
 
-.logs {
+.logs p{
     font-size: 14px;
     background-color: black;
     color: white;
-    padding: 1em;
-    margin: 0em 30em;
+    padding: 2em;
     border-radius: 18px;
+    width: 50%;
+    text-align: center;
 }
 
 .score-section {
