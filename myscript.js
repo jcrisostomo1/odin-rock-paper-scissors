@@ -116,5 +116,5 @@ resetBtn.addEventListener('click', () => {
     document.querySelector(".score-player p").textContent = playerWins;
     document.querySelector(".score-computer p").textContent = computerWins;
     winner.textContent = "";
-    log.textContent = "";
+    log.textContent = "...";
 })
