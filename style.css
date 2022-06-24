@@ -43,6 +43,15 @@ h2 {
     height: auto;
 }
 
+button:hover {
+    background-color: #D7CEC7;
+}
+
+button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(3px);
+  }
+
 .logs p{
     font-size: 14px;
     background-color: black;
