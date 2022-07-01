@@ -1,10 +1,13 @@
-* {
+:root {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
 body {
+    display:flex; 
+    flex-direction:column; 
     background-color: #565656;
+    height: 100vh;
 }
 
 h1 {
@@ -121,3 +124,17 @@ button:active {
     align-items: center;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    gap: 15px;
+    margin-top: auto;
+    padding: 10px;
+}
+
+.fa-github {
+    color: black;
+    font-size: 24px;
+}
